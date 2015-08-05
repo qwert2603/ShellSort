@@ -10,15 +10,15 @@ package shellsort;
  * @author alex
  */
 public class ShellSort {
-    public static void sort(int[] mas) {
+    public static <T extends Number> void sort(T mas[]) {
         int h = 0;
         while(++h <= mas.length / 9)
             h *=3;
         while(h != 0) {
             for(int i = h; i < mas.length; ++i) {
-                int e = mas[i];
+                T e = mas[i];
                 int j = i;
-                for(; j >= h && mas[j - h] > e; j -= h) {
+                for(; j >= h && mas[j - h].doubleValue() > e.doubleValue(); j -= h) {
                     mas[j] = mas[j - h];
                 }
                 mas[j] = e;

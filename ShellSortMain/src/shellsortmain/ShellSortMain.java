@@ -18,7 +18,7 @@ public class ShellSortMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] m = new int[10000];
+        Integer m[] = new Integer[10000];
         Random r = new Random();
         for(int q = 0; q != m.length; ++q)
             m[q] = (int) r.nextInt(10000);
