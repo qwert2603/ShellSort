@@ -18,10 +18,12 @@ public class ShellSortMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Integer m[] = new Integer[10000];
+        Double[] m = new Double[10000];
         Random r = new Random();
-        for(int q = 0; q != m.length; ++q)
-            m[q] = (int) r.nextInt(10000);
+        for(int q = 0; q != m.length; ++q) {
+            //m[q] = (int) r.nextInt(10000);
+            m[q] = r.nextDouble();
+        }
         System.out.println("start\t");
         ShellSort.sort(m);
         /*for(int w = 0; w != m.length; ++w)

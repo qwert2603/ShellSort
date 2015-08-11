@@ -10,7 +10,7 @@ package shellsort;
  * @author alex
  */
 public class ShellSort {
-    public static <T extends Number> void sort(T mas[]) {
+    public static <T extends Comparable<T>> void sort(T[] mas) {
         int h = 0;
         while(++h <= mas.length / 9)
             h *=3;
@@ -18,7 +18,7 @@ public class ShellSort {
             for(int i = h; i < mas.length; ++i) {
                 T e = mas[i];
                 int j = i;
-                for(; j >= h && mas[j - h].doubleValue() > e.doubleValue(); j -= h) {
+                for(; j >= h && mas[j - h].compareTo(e) > 0; j -= h) {
                     mas[j] = mas[j - h];
                 }
                 mas[j] = e;
